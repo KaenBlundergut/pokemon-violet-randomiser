@@ -1,0 +1,314 @@
+/* --- Global Theme & Variables --- */
+:root {
+    --bg-dark: #0f0f14;
+    --card-bg: #181824;
+    --input-bg: #222235;
+    --scarlet: #e63946;
+    --violet: #7209B7;
+    --violet-light: #9d4edd;
+    --gold: #ffb703;
+    --text-main: #f8f9fa;
+    --text-muted: #adb5bd;
+    --success: #2a9d8f;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* --- Premium Dual-Color Header --- */
+header {
+    background: linear-gradient(135deg, var(--scarlet) 0%, var(--violet) 100%);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* --- Container Workspace Layout --- */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2a2a3d;
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #2a2a3d;
+}
+
+section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* --- Form Fields & Dropdowns (Controls Grid) --- */
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    align-items: flex-end;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.control-group label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #2e2e42;
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+select:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--violet-light);
+    box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.2);
+}
+
+input[type="number"] {
+    text-align: center;
+}
+
+/* --- Buttons System --- */
+button {
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#add-btn {
+    background-color: var(--success);
+    color: #fff;
+    grid-column: 1 / -1; /* Forces button to span nicely underneath inputs */
+    padding: 14px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.2);
+}
+
+#add-btn:hover {
+    background-color: #218074;
+    transform: translateY(-1px);
+}
+
+.pool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.pool-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.alt-btn {
+    background-color: #2e2e42;
+    color: var(--text-main);
+    font-size: 12px;
+    padding: 8px 14px;
+    border: 1px solid #3e3e5c;
+}
+
+.alt-btn:hover {
+    background-color: #3e3e5c;
+}
+
+.text-danger {
+    color: #ff4d6d;
+    border-color: #5c2430;
+}
+
+.text-danger:hover {
+    background-color: #5c2430;
+}
+
+/* --- Big Engine Roll Trigger --- */
+#roll-btn {
+    background: linear-gradient(90deg, var(--scarlet) 0%, var(--violet) 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 16px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 6px 20px rgba(114, 9, 183, 0.3);
+    border-radius: 10px;
+}
+
+#roll-btn:hover:not(:disabled) {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+#roll-btn:disabled {
+    background: #333344;
+    color: #777;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* --- Option Pools Listing Areas --- */
+ul {
+    list-style-type: none;
+    padding: 8px;
+    max-height: 180px;
+    overflow-y: auto;
+    background: #0d0d14;
+    border-radius: 8px;
+    text-align: left;
+    margin: 10px 0 0 0;
+    border: 1px solid #222235;
+}
+
+/* Custom Styled Scrollbar */
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+ul::-webkit-scrollbar-track {
+    background: #0d0d14;
+}
+ul::-webkit-scrollbar-thumb {
+    background: #2e2e42;
+    border-radius: 4px;
+}
+
+li {
+    background: #1f1f2e;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--violet-light);
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+/* Dynamic Version/Region Badges */
+.badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Match colors to the generation 9 game map themes */
+li:has(.badge:contains) { border-left-color: var(--violet-light); } 
+
+.badge[data-type="Base"], 
+li:nth-child(even) .badge { background-color: #3d1a66; color: #d8b4fe; }
+li:nth-child(odd) .badge { background-color: #5c1422; color: #fecdd3; }
+
+/* Historical Checklist Styling */
+#completed-pool li {
+    border-left: 4px solid var(--success);
+    background: #161e1c;
+    color: var(--text-muted);
+}
+#completed-pool span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* --- Central Randomiser Screen Output --- */
+#result-display {
+    margin-top: 20px;
+    padding: 24px;
+    background-color: #0d0d14;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 700;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #222235;
+    transition: all 0.15s ease-in-out;
+}
+
+#result-display.idle {
+    color: var(--text-muted);
+    font-style: italic;
+    font-weight: 400;
+}
+
+#result-display.rolling {
+    color: #4cc9f0;
+    border: 2px dashed #4cc9f0;
+    background-color: rgba(76, 201, 240, 0.05);
+}
+
+#result-display.selected {
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    background-color: rgba(255, 183, 3, 0.05);
+    text-shadow: 0 0 12px rgba(255, 183, 3, 0.3);
+    animation: popSuccess 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
