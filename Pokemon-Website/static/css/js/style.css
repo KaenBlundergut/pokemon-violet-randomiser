@@ -1,0 +1,193 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-dark: #1e293b;
+    --accent-red: #ef4444;
+    --text-light: #f8fafc;
+    --border-slate: #334155;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dex-header-matrix {
+    background-color: var(--card-dark);
+    border-bottom: 2px solid var(--border-slate);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.variation-selectors {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.app-workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar-navigation {
+    width: 240px;
+    background-color: var(--card-dark);
+    border-right: 2px solid var(--border-slate);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    text-align: left;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.nav-link.active, .nav-link:hover {
+    background-color: var(--accent-red);
+    color: #fff;
+    font-weight: bold;
+}
+
+.content-canvas {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.homepage-view-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.control-panel-card, .history-sidebar-card, .placeholder-card {
+    background-color: var(--card-dark);
+    border: 1px solid var(--border-slate);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; margin-bottom: 6px; color: #94a3b8; font-size: 13px; }
+.form-control { width: 100%; padding: 10px; background-color: var(--bg-dark); border: 1px solid var(--border-slate); color: #fff; border-radius: 6px; }
+
+.options-checkbox-matrix {
+    border: 1px solid var(--border-slate);
+    border-radius: 8px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.btn-primary { background-color: var(--accent-red); color: white; border: none; padding: 14px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; }
+.btn-primary:hover { opacity: 0.9; }
+
+.team-builder-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+}
+.results-card p {
+    padding: 8px;
+    background-color: var(--bg-dark);
+    border-left: 4px solid var(--accent-red);
+    margin: 6px 0;
+}
+
+.pokedex-tab-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 16px;
+}
+
+.filter-inputs-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.pokedex-workspace-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.pokedex-grid-scroll-canvas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+    overflow-y: auto;
+    padding-right: 6px;
+    max-height: calc(100vh - 240px);
+}
+
+.pokedex-mini-card {
+    background-color: var(--card-dark);
+    border: 1px solid var(--border-slate);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.pokedex-mini-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-red);
+}
+
+.mini-card-id { font-size: 11px; color: #94a3b8; }
+.mini-card-name { font-size: 12px; font-weight: bold; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.detail-sticky-inspector {
+    overflow-y: auto;
+    max-height: calc(100vh - 240px);
+    border-left: 3px solid var(--accent-red);
+}
+
+.inspector-hero-header h2 { margin: 4px 0; color: #fff; }
+.generation-indicator-tag { font-size: 11px; color: var(--accent-red); background: rgba(239, 68, 68, 0.1); padding: 2px 6px; display: inline-block; border-radius: 4px; }
+.inspector-sprite-row { display: flex; gap: 10px; margin: 15px 0; }
+.sprite-box { background: var(--bg-dark); border: 1px solid var(--border-slate); border-radius: 6px; flex: 1; text-align: center; padding: 6px; }
+.sprite-box img { width: 80px; height: 80px; }
+
+/* Stat Bar Visual Matrix Gauges */
+.stat-bar-container { margin-bottom: 10px; }
+.stat-label-row { display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8; margin-bottom: 2px; }
+.stat-bar-track { background: var(--bg-dark); height: 8px; border-radius: 4px; overflow: hidden; }
+.stat-bar-fill { background: linear-gradient(90deg, #f87171, var(--accent-red)); height: 100%; border-radius: 4px; transition: width 0.4s ease-out; }
+
+/* Element Badge Mappings */
+.type-badge { padding: 3px 8px; font-size: 10px; font-weight: bold; border-radius: 4px; color: white; display: inline-block; }
+.badge-fire { background-color: #f97316; }
+.badge-water { background-color: #3b82f6; }
+.badge-grass { background-color: #22c55e; }
+.badge-electric { background-color: #eab308; }
+.badge-psychic { background-color: #ec4899; }
+.badge-ghost { background-color: #6366f1; }
+.badge-dragon { background-color: #a855f7; }
+.hidden-flag { font-size: 9px; color: #f87171; font-weight: bold; }

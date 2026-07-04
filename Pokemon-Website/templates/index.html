@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Randomizer Hub</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Context Bar: Number Variation Matrix -->
+    <header class="dex-header-matrix">
+        <div class="header-logo">
+            <h1>PokéHub Engine</h1>
+        </div>
+        <div class="variation-selectors">
+            <div class="select-wrapper">
+                <label>Pokédex Mode</label>
+                <select id="dex-mode-select" onchange="window.GlobalAppEngine.updateNumberVariations()">
+                    <option value="national">National Dex</option>
+                    <option value="generation">Generation Dex</option>
+                    <option value="regional">Regional Dex</option>
+                    <option value="custom">Custom Seed Dex</option>
+                </select>
+            </div>
+            <div class="live-variant-display">
+                <span id="variant-label">National:</span>
+                <strong id="variant-value">#001</strong>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-workspace">
+        <!-- Sidebar Shell for Menu Actions -->
+        <nav class="sidebar-navigation">
+            <button class="nav-link active" data-target="home">Home</button>
+            <button class="nav-link" data-target="games">Pokémon Games</button>
+            <button class="nav-link" data-target="randomizer">Randomizer Settings</button>
+            <button class="nav-link" data-target="pokedex">Pokédex</button>
+            <button class="nav-link" data-target="type-calc">Type Calculator</button>
+            <button class="nav-link" data-target="team-builder">Team Builder</button>
+            <button class="nav-link" data-target="nuzlocke">Nuzlocke Tools</button>
+            <button class="nav-link" data-target="moves">Move Database</button>
+            <button class="nav-link" data-target="abilities">Abilities</button>
+            <button class="nav-link" data-target="items">Item Database</button>
+        </nav>
+
+        <!-- Main Dynamic Canvas Window -->
+        <main class="content-canvas" id="app-viewport">
+            <!-- JavaScript mounts individual views dynamically inside here -->
+        </main>
+    </div>
+
+    <!-- Core App Injection -->
+    <script src="/static/js/main.js" type="module"></script>
+</body>
+</html>
